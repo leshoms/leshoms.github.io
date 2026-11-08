@@ -1,0 +1,268 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LE SHOMS · Perfumes de diseñador y árabes para hombre</title>
+  <meta name="description" content="LE SHOMS: perfumes de diseñador y perfumes árabes originales para hombre. Más de 120 fragancias y asesoría personalizada.">
+  <link rel="icon" href="img/emblema.png">
+  <link rel="preload" as="image" href="img/emblema.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animación de entrada -->
+  <div id="intro" aria-hidden="true">
+    <div class="intro-logo" role="img" aria-label="LE SHOMS"><span class="lockup lockup--xl"><span class="emblem"><img src="img/emblema.png" alt=""></span><span class="wordmark">LE SHOMS</span></span></div>
+    <span class="intro-skip">Toca para entrar</span>
+  </div>
+  <script>
+    try {
+      if (sessionStorage.getItem("leshoms-intro") || matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("no-intro");
+    } catch (e) {}
+  </script>
+
+  <!-- Barra de avisos -->
+  <div class="announce" id="announce">
+    <p class="active">Perfumes de diseñador y árabes originales</p>
+    <p>Te asesoramos para encontrar tu fragancia ideal</p>
+    <p>Más de 120 fragancias para hombre</p>
+  </div>
+
+  <!-- Cabecera -->
+  <header class="header">
+    <div class="header-row">
+      <div class="header-left">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <button class="icon-btn" id="searchBtn" aria-label="Buscar">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+      </div>
+      <a href="#" class="brand" aria-label="LE SHOMS, inicio"><span class="lockup lockup--sm"><span class="emblem"><img src="img/emblema.png" alt=""></span><span class="wordmark">LE SHOMS</span></span></a>
+      <div class="header-right">
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Abrir pedido">
+          <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#destacados" data-cat-link="disenador">Diseñador</a>
+      <a href="#destacados" data-cat-link="arabes">Árabes</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="search-bar" id="searchBar" hidden>
+      <input type="search" id="search" placeholder="Buscar perfume o marca…" aria-label="Buscar perfume o marca">
+    </div>
+  </header>
+
+  <main>
+    <!-- Carrusel principal -->
+    <section class="slider" id="inicio" aria-roledescription="carrusel">
+      <div class="slides" id="slides">
+        <article class="slide slide-logo active">
+          <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h2 class="hero-logo" aria-label="LE SHOMS"><span class="lockup lockup--xl"><span class="emblem"><img src="img/emblema.png" alt=""></span><span class="wordmark">LE SHOMS</span></span></h2>
+          <div class="slide-text center">
+            <p class="eyebrow">Perfumería masculina</p>
+            <h1>Fragancias que dejan huella</h1>
+            <a href="#destacados" class="btn">Ver catálogo</a>
+          </div>
+        </article>
+        <article class="slide slide-promo">
+          <div class="slide-text">
+            <p class="eyebrow">Colección</p>
+            <h2>Lujo<br><em>árabe</em></h2>
+            <p>Oud, ámbar y especias. Lattafa, Armaf, Rasasi, Afnan y más.</p>
+            <a href="#destacados" class="btn" data-cat-link="arabes">Explorar árabes</a>
+          </div>
+          <div class="collage" aria-hidden="true">
+            <img src="img/a12.jpg" alt=""><img src="img/a07.jpg" alt=""><img src="img/a03.jpg" alt="">
+          </div>
+        </article>
+        <article class="slide slide-promo">
+          <div class="slide-text">
+            <p class="eyebrow">Colección</p>
+            <h2>Iconos de<br><em>diseñador</em></h2>
+            <p>Dior, Versace, Armani, Paco Rabanne, Carolina Herrera y más.</p>
+            <a href="#destacados" class="btn" data-cat-link="disenador">Explorar diseñador</a>
+          </div>
+          <div class="collage" aria-hidden="true">
+            <img src="img/d01.jpg" alt=""><img src="img/d22.jpg" alt=""><img src="img/d02.jpg" alt="">
+          </div>
+        </article>
+      </div>
+      <button class="slider-arrow prev" id="prevSlide" aria-label="Anterior">‹</button>
+      <button class="slider-arrow next" id="nextSlide" aria-label="Siguiente">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="wrap categories">
+      <a href="#destacados" class="cat-tile" data-cat-link="disenador">
+        <div class="cat-imgs"><img src="img/d07.jpg" alt=""><img src="img/d12.jpg" alt=""></div>
+        <div class="cat-label"><span>Perfumes</span><strong>Diseñador</strong><small id="countD"></small></div>
+      </a>
+      <a href="#destacados" class="cat-tile" data-cat-link="arabes">
+        <div class="cat-imgs"><img src="img/a01.jpg" alt=""><img src="img/a18.jpg" alt=""></div>
+        <div class="cat-label"><span>Perfumes</span><strong>Árabes</strong><small id="countA"></small></div>
+      </a>
+    </section>
+
+    <!-- Marcas -->
+    <section class="brands" id="marcas">
+      <button class="brands-arrow prev" id="brandsPrev" aria-label="Ver marcas anteriores">
+        <svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+      </button>
+      <div class="brands-track" id="brands"></div>
+      <button class="brands-arrow next" id="brandsNext" aria-label="Ver más marcas">
+        <svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>
+      </button>
+    </section>
+
+    <!-- Destacados / catálogo -->
+    <section class="wrap catalog" id="destacados">
+      <h2 class="section-title">Destacados</h2>
+      <div class="filters" id="filters">
+        <button data-f="todos">Todos</button>
+        <button data-f="disenador" class="active">Diseñador</button>
+        <button data-f="arabes">Árabes</button>
+        <button data-f="precio">Con precio</button>
+      </div>
+      <p class="active-filter" id="activeFilter" hidden></p>
+      <div class="grid" id="grid"></div>
+      <p class="empty-search" id="emptySearch" hidden>No encontramos perfumes con esa búsqueda.</p>
+      <div class="more-wrap"><button class="btn ghost" id="moreBtn">Mostrar más</button></div>
+    </section>
+
+    <!-- Más popular -->
+    <section class="wrap featured" id="featured">
+      <div class="featured-img"><img src="img/d01.jpg" alt="Dior Sauvage EDT 100ml"></div>
+      <div class="featured-text">
+        <p class="eyebrow">Más popular</p>
+        <h2>Dior Sauvage EDT</h2>
+        <p>Fresco, especiado y con una estela amaderada que no pasa desapercibida. Un clásico moderno que funciona de día y de noche, en la oficina o en una salida.</p>
+        <p class="featured-price" id="featuredPrice"></p>
+        <div class="featured-ctas">
+          <button class="btn" data-add="d01">Añadir al pedido</button>
+          <a href="#destacados" class="btn ghost" data-cat-link="disenador">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="wrap perks">
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <strong>Productos originales</strong><span>Fragancias auténticas</span>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+        <strong>Asesoría personalizada</strong><span>Te ayudamos a elegir</span>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <strong>Pedido fácil</strong><span>Arma tu pedido en minutos</span>
+      </div>
+      <div class="perk">
+        <svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+        <strong>Envíos</strong><span>Consulta cobertura</span>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="wrap about" id="nosotros">
+      <div class="about-logo"><span class="lockup lockup--lg"><span class="emblem"><img src="img/emblema.png" alt=""></span><span class="wordmark">LE SHOMS</span></span></div>
+      <div>
+        <h2 class="section-title left">Nosotros</h2>
+        <p>En LE SHOMS creemos que un buen perfume es parte de tu identidad. Reunimos las fragancias de diseñador más buscadas y lo mejor de la perfumería árabe, con productos originales y asesoría personalizada para que encuentres tu aroma.</p>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="wrap contact" id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <p>¿Quieres el precio de un perfume o hacer tu pedido? Escríbenos.</p>
+      <form id="contactForm">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea id="msg" rows="5" placeholder="Mensaje" required></textarea>
+        <button class="btn" type="submit">Enviar</button>
+        <p class="form-msg" id="formMsg" hidden>¡Gracias! Te responderemos pronto.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-cols">
+      <div>
+        <div class="footer-logo"><span class="lockup lockup--md"><span class="emblem"><img src="img/emblema.png" alt=""></span><span class="wordmark">LE SHOMS</span></span></div>
+      </div>
+      <div>
+        <h4>Catálogo</h4>
+        <a href="#destacados" data-cat-link="disenador">Perfumes de diseñador</a>
+        <a href="#destacados" data-cat-link="arabes">Perfumes árabes</a>
+        <a href="#marcas">Marcas</a>
+      </div>
+      <div>
+        <h4>LE SHOMS</h4>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> LE SHOMS · leshoms.github.io</p>
+  </footer>
+
+  <!-- Barra inferior (móvil) -->
+  <nav class="bottom-nav" aria-label="Accesos rápidos">
+    <a href="#inicio"><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Inicio</a>
+    <button id="bottomSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Buscar</button>
+    <a href="#destacados"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Catálogo</a>
+    <button id="bottomCart"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Pedido <span class="badge" id="cartCount2">0</span></button>
+  </nav>
+
+  <!-- Carrito -->
+  <aside class="cart" id="cart" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Tu pedido</h3>
+      <button id="closeCart" aria-label="Cerrar">✕</button>
+    </div>
+    <ul id="cartItems"></ul>
+    <div class="cart-foot">
+      <p>Total: <strong id="cartTotal">$0</strong></p>
+      <button class="btn" id="checkout">Hacer pedido</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Ficha del perfume -->
+  <dialog class="ficha" id="ficha" aria-labelledby="fichaNombre">
+    <button class="ficha-close" id="fichaClose" aria-label="Cerrar">✕</button>
+    <div class="ficha-grid">
+      <div class="ficha-img"><img id="fichaImg" alt=""></div>
+      <div class="ficha-info">
+        <p class="brand-name" id="fichaMarca"></p>
+        <h3 id="fichaNombre"></h3>
+        <p class="ficha-precio" id="fichaPrecio"></p>
+        <div class="ficha-acordes" id="fichaAcordes"></div>
+        <div class="piramide" id="fichaPiramide"></div>
+        <div class="ficha-ctas" id="fichaCtas"></div>
+        <p class="ficha-fuente" id="fichaFuente"></p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="logo.js"></script>
+  <script src="data.js"></script>
+  <script src="notas.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
